@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATINE CREAPUREⓇ - 7NUTRITION</title>
+</head>
+<body>
+
+<header>
+    <h1>protein go</h1>
+</header>
+
+<div class="container">
+    <div class="product">
+        <img src="7nutr.jpg" alt="CREATINE CREAPUREⓇ - 7NUTRITION">
+        <div class="product-details">
+            <h1>CREATINE CREAPUREⓇ (CreapureⓇ) 500 g - 7NUTRITION</h1>
+            <p class="price">350,00 DH <span class="old-price">399,00 DH</span></p>
+            <p class="availability">En stock</p>
+            <div class="purchase-options">
+                <button onclick="addToCart()">Ajouter au panier</button>
+                <button onclick="buyNow()">Acheter maintenant</button>
+            </div>
+            <div id="confirmationMessage"></div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>Description du produit</h2>
+        <p>CREATINE CREAPUREⓇ (CreapureⓇ) est une créatine monohydrate de la plus haute qualité, idéale pour les athlètes et les amateurs de fitness. Elle aide à améliorer la force, l'endurance et la performance lors d'entraînements intensifs.</p>
+        <h3>Caractéristiques :</h3>
+        <ul>
+            <li>Pureté garantie avec CreapureⓇ</li>
+            <li>500 g de créatine monohydrate</li>
+            <li>Augmente la performance physique</li>
+            <li>Idéale pour les sportifs cherchant à maximiser leur potentiel</li>
+            <li>Facile à mélanger avec de l'eau ou des boissons protéinées</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Iron Gain. Tous droits réservés.</p>
+</div>
+
+<script>
+    // Données du produit
+    const productData = {
+        name: "CREATINE CREAPUREⓇ (CreapureⓇ) 500 g - 7NUTRITION",
+        price: "350,00 DH",
+        id: 11,
+        quantity: 1
+    };
+
+    // Fonction pour ajouter au panier
+    function addToCart() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existingProduct = cart.find(item => item.id === productData.id);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1;
+        } else {
+            cart.push({ ...productData });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        document.getElementById("confirmationMessage").innerHTML = `
+            Produit ajouté au panier ! <a href="panier.html" style="color: blue; text-decoration: underline;">Voir le panier</a>
+        `;
+    }
+
+    // Fonction pour acheter maintenant
+    function buyNow() {
+        window.location.href = "payment11.html";
+    }
+</script>
+
+</body>
+</html>

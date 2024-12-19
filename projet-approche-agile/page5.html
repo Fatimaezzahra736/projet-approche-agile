@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinc 100% VRN</title>
+</head>
+<body>
+
+<header>
+    <h1>Iron Gain - Boutique</h1>
+</header>
+
+<div class="container">
+    <div class="product">
+        <img src="soyt.jpg" alt="Zinc 100% VRN">
+        <div class="product-details">
+            <h1>Zinc 100% VRN - 60 capsules</h1>
+            <p class="price">189,00 DH <span class="old-price">219,00 DH</span></p>
+            <p class="availability">En stock</p>
+            <div class="purchase-options">
+                <button onclick="addToCart()">Ajouter au panier</button>
+                <button onclick="buyNow()">Acheter maintenant</button>
+            </div>
+            <div id="confirmationMessage"></div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>Description du produit</h2>
+        <p>Le Zinc 100% VRN est un complément alimentaire essentiel pour soutenir le système immunitaire et favoriser une bonne santé générale. Chaque capsule contient du zinc pur, un minéral clé pour la fonction cellulaire et la santé de la peau.</p>
+        <h3>Caractéristiques :</h3>
+        <ul>
+            <li>Complément alimentaire à base de Zinc pur</li>
+            <li>60 capsules pour une utilisation de 2 mois</li>
+            <li>Renforce le système immunitaire et la peau</li>
+            <li>Idéal pour les sportifs et les personnes actives</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Iron Gain. Tous droits réservés.</p>
+</div>
+
+<script>
+    // Données du produit
+    const productData = {
+        name: "Zinc 100% VRN - 60 capsules",
+        price: "189,00 DH",
+        id: 5,
+        quantity: 1
+    };
+
+    // Fonction pour ajouter au panier
+    function addToCart() {
+        // Récupérer le panier actuel (ou créer un nouveau)
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Vérifier si le produit existe déjà dans le panier
+        const existingProduct = cart.find(item => item.id === productData.id);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1; // Augmenter la quantité
+        } else {
+            cart.push({ ...productData }); // Ajouter le produit
+        }
+
+        // Mettre à jour le panier dans le localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Afficher le message de confirmation
+        document.getElementById("confirmationMessage").innerHTML = `
+            Produit ajouté au panier ! <a href="panier.html" style="color: blue; text-decoration: underline;">Voir le panier</a>
+        `;
+    }
+
+    // Fonction pour acheter maintenant
+    function buyNow() {
+        window.location.href = "payment5.html";
+    }
+</script>
+
+</body>
+</html>

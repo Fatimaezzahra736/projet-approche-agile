@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylec.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-popup popup" data-login_popup="" data-section-id="login-register" data-section-type="login-register">
+        <div class="remove-form-login-register" data-close_login_popup=""></div>
+        <div class="content-form-register popup">
+            <div class="close-form-login" data-close_login_popup=""><span></span></div>
+            <div class="login__content">
+                <h3>Se connecter</h3>
+                <div class="login_info">
+                    <div class="js-login-form login-form">
+                        <div class="js-recover-password-success recover-password__success alert alert-success d-none">
+                            Nous vous avons envoyé un e-mail avec un lien pour mettre à jour votre mot de passe.
+                        </div>
+                        <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8" data-login-with-shop-sign-in="true"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
+                            
+                            <div class="form-group">
+                                <label class="d-none" for="customerEmail">E-mail*</label>
+                                <input id="customerEmail" class="form-control" name="customer[email]" type="email" placeholder="E-mail*" required="" autocorrect="off" autocapitalize="off" autofocus="">
+                            </div><div class="form-group form-group--pasword">
+                                    <label class="d-none" for="customerPassword">Mot de passe*</label>
+                                    <input id="customerPassword" class="form-control" name="customer[password]" type="password" placeholder="Mot de passe*" autocomplete="on" required="">
+                                    <a href="javascript:void(0)" class="js-password-toggle password-toggle">
+                                        <span class="text-show-password"><i class="feather-eye"></i></span>
+                                        <span class="text-hide-password"><i class="feather-eye-off"></i></span>
+                                    </a>
+                                </div><div class="form-link">
+                                    <a class="js-forget-password" href="/account/recover">Mot de passe perdu ?</a>
+                                </div><div class="form-button">
+                                <input type="submit" class="btn btn-primary" value="Se connecter">
+                                <div class="register-account"><a href="<span%20class='notranslate'>https://account.irongain.net?locale=fr&amp;region_country=MA</span>">Créez votre compte</a></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="js-recover-password recover-password d-none">
+                        <h2 class="login-register__heading recover-password__heading">Réinitialiser votre mot de passe</h2>
+                        <p class="recover-password__summary">Nous vous enverrons un e-mail pour réinitialiser votre mot de passe.</p>
+                        <div class="recover-password__form">
+                            <form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">
+                                
+    <div class="form-group">
+                                    <label class="d-none" for="recoverEmail">Mot de passe*</label>
+                                    <input id="recoverEmail" class="form-control" type="email" name="email" value="" placeholder="E-mail*" required="">
+                                </div>
+                                <div class="form-button">
+                                    <input type="submit" class="btn btn-primary" value="Soumettre">
+                                </div>
+                                <div class="form-link">
+                                    <a class="js-forget-password" href="#customers-login">Annuler</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div></div>
+            </div>
+        </div>
+    </div>
+    <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+        <img src="spinner.gif" alt="Chargement...">
+    </div>
+    
+    <form id="myForm" action="/your-action-url" method="post">
+        <input type="email" name="email" required placeholder="E-mail*">
+        <input type="password" name="password" required placeholder="Mot de passe*">
+        <input type="submit" value="Se connecter">
+    </form>
+    <script src="javac.js"></script>
+</body>
+</html>

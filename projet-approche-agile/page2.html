@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serious Mass - Optimum Nutrition</title>
+</head>
+<body>
+
+<header>
+    <h1>Iron Gain - Boutique</h1>
+</header>
+
+<div class="container">
+    <div class="product">
+        <img src="serioss.jpg.webp" alt="100% Serious Mass">
+        <div class="product-details">
+            <h1>Serious Mass - 5.44 Kg</h1>
+            <p class="price">840,00 DH <span class="old-price">960,00 DH</span></p>
+            <p class="availability">En stock</p>
+            <div class="purchase-options">
+                <button onclick="addToCart()">Ajouter au panier</button>
+                <button onclick="buyNow()">Acheter maintenant</button>
+            </div>
+            <div id="confirmationMessage"></div>
+        </div>
+    </div>
+
+    <div class="description">
+        <h2>Description du produit</h2>
+        <p>Serious Mass est un complément alimentaire de gain de masse conçu par Optimum Nutrition. Avec une combinaison de protéines, glucides et autres nutriments, il offre une haute teneur en calories, idéale pour ceux qui cherchent à prendre du poids et à construire de la masse musculaire.</p>
+        <h3>Caractéristiques :</h3>
+        <ul>
+            <li>Protéines de haute qualité pour une croissance musculaire optimale</li>
+            <li>6 g de BCAA et 12 g de glutamine pour la récupération</li>
+            <li>Calories supplémentaires pour aider à la prise de masse</li>
+            <li>5.44 kg pour une utilisation prolongée</li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2024 Iron Gain. Tous droits réservés.</p>
+</div>
+
+<script>
+      // Données du produit
+      const productData = {
+        name: "Serious Mass - 5.44 Kg",
+        price: "189,00 DH",
+        id: 2,
+        quantity:1
+    };
+ // Fonction pour ajouter au panier
+ function addToCart() {
+        // Récupérer le panier actuel (ou créer un nouveau)
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // Vérifier si le produit existe déjà dans le panier
+        const existingProduct = cart.find(item => item.id === productData.id);
+
+        if (existingProduct) {
+            existingProduct.quantity += 1; // Augmenter la quantité
+        } else {
+            cart.push({ ...productData }); // Ajouter le produit
+        }
+
+        // Mettre à jour le panier dans le localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Afficher le message de confirmation
+        document.getElementById("confirmationMessage").innerHTML = `
+            Produit ajouté au panier ! <a href="panier.html" style="color: blue; text-decoration: underline;">Voir le panier</a>
+        `;
+    }
+
+    // Fonction pour acheter maintenant
+    function buyNow() {
+        window.location.href = "payment2.html";
+    }
+</script>
+
+</body>
+</html>
